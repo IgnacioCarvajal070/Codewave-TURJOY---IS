@@ -15,7 +15,7 @@ class VoucherController extends Controller {
         $pdf = Voucher::findOrFail($id);
 
         // Obtener la ruta del archivo PDF
-        $path = storage_path('app\public\\'.$pdf->uri);
+        $path = storage_path('app/public/'.$pdf->uri);
 
         // Obtener el nombre original del archivo
         $filename = $pdf->pdf_name;
@@ -53,7 +53,7 @@ class VoucherController extends Controller {
             $filename = $ticket->code.'.pdf';
 
             // Guardar el PDF en la carpeta public
-            $path = 'pdfs\\'.$filename;
+            $path = 'pdfs/'.$filename;
             Storage::disk('public')->put($path, $domPDF->output());
             try {
                 $voucher = Voucher::create([
