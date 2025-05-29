@@ -19,5 +19,12 @@ class usuarioTableSeeder extends Seeder
             'password'=> bcrypt('Turjoy91'),
             'userType' => 2,
         ]);
+
+        User::create([
+        'name' => 'Cristhian Montoya',
+        'email' => 'Cristhian.Montoya@ucn.cl',
+        'password' => bcrypt('Polystation1!'),
+        'userType' => 1,
+    ]);
     }
 }
